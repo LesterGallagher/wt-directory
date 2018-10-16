@@ -1,0 +1,180 @@
+---
+---
+
+$offset-height: 50px;
+$brand-primary: darken(#428bca, 6.5%);
+$brand-success: #5cb85c;
+$brand-info: #5bc0de;
+$brand-warning: #f0ad4e;
+$brand-danger: #d9534f;
+$bg: #efefef;
+
+body {
+    background: $bg;
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.nopadding {
+    padding: 0;
+}
+
+header {
+    padding-bottom: $offset-height;
+    margin-bottom: -$offset-height;
+    background: darken($brand-primary, 20%);
+    color: #fff;
+}
+
+.top {
+    height: $offset-height;
+    line-height: $offset-height;
+    padding: 0 10px;
+}
+
+aside.more-aside .top {
+    background: $brand-warning;
+    color: #fff;
+}
+
+section.sidebar-section .top {
+    background: $brand-info;
+    color: #fff;
+}
+
+main {
+    overflow: hidden;
+}
+
+main .top {
+    background: #fff;
+}
+
+.sub-panel {
+    padding: 10px;
+}
+
+main .sub-panel {
+    background: #fff;
+}
+
+.text-capitalize {
+    text-transform: uppercase;
+}
+
+.muted {
+    color: #999;
+}
+
+#vehicle-type {
+    margin-bottom: 5px;
+}
+
+#vehicle-type a {
+    width: 49.99%;
+    float: left;
+    text-align: center;
+    border-bottom: 3px solid #ccc;    
+    padding: 4px 0;
+    display: block;
+}
+
+#vehicle-type a:hover {
+    border-bottom-color: desaturate($brand-primary, 10%);
+}
+
+#vehicle-type a.active {
+    border-bottom-color: $brand-primary;
+}
+
+.vehicle-list {
+    max-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.vehicle-list a {
+    display: block;
+    transition: all 200ms ease;
+    text-decoration: none;
+    margin: 0 5px 5px 0;
+}
+
+.vehicle-list a:hover {
+    transform: translateX(4px);
+}
+
+.vehicle-list div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.vehicle-list small {
+    display: block;
+}
+
+.vehicle-list b {
+    color: #333;
+}
+
+.vehicle-list img {
+    padding-right: 4px;
+}
+
+.vehicle-list span {
+    display: block;
+    color: #333;
+}
+
+.text-black {
+    color: #333;
+}
+
+.text-primary {
+    color: $brand-primary;
+}
+
+input, select {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 6px 10px 6px 10px;
+}
+
+input[type=text].search {
+    background-image: url('../images/searchicon.png');
+    background-position: 10px 7px; 
+    background-repeat: no-repeat;
+    padding: 6px 10px 6px 40px;
+}
+
+input[type=text].search.waiting {
+    background-image: url('../images/loadingicon.svg');
+}
+
+.vehicle-list i {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.vehicle-list i:before {
+    content: "\20ac";
+}
+
+.donate .btn {
+    width: 100%;
+}
+

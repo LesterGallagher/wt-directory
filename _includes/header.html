@@ -1,0 +1,13 @@
+{% assign default_paths = site.pages | map: "path" %} {% assign page_paths = site.header_pages | default: default_paths %}
+
+<header>
+    <div class="container">
+        <div class="col">
+            <h1>{{ site.title }}</h1>
+            <p>{{ site.description }}</p>
+        </div>
+        <div class="col">
+            {% include social.html %}
+        </div>
+    </div>
+</header>

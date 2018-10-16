@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<div class="container wrapper nopadding">
+    <main class="col col-md-5 col-sm-7 col-xs-12 nopadding col-md-push-4 col-sm-push-5">
+        <div class="top"><b class="text-capitalize">{{ page.title }}</b></div>
+        <div class="sub-panel">{{ content }}</div>
+    </main>
+    <section class="sidebar-section nopadding col col-md-4 col-sm-5 col-xs-12 col-md-pull-5 col-sm-pull-7">{% include sidebar.html %}</section>
+    <aside class="more-aside nopadding col col-md-3 col-xs-12">{% include aside.html %}</aside>
+</div>

@@ -1,0 +1,5 @@
+---
+index: 340
+description: 'Nimrod Mk1 - Fighter, Rank: 1, BR: 0.7, Silver lions: 0, Research points: 0'
+db: 287
+---

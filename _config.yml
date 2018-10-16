@@ -1,0 +1,70 @@
+---
+title: WarThunder Directory
+description: This site gives you access to the full catalog of every vehicle on the War Thunder game. From the War Thunder planes like Ar-2's to tanks like the T-28 and all other vehicles. 
+keywords: test test test
+logo: assets/images/logo.png
+lang: en
+timezone: Europe/Amsterdam
+url: 
+baseurl: 
+abbrv: ESS
+sass:
+  style: compressed
+  sass_dir: assets/css
+url: 
+plugins:
+- jekyll-sitemap
+- jekyll-seo-tag
+defaults:
+  - scope:
+      path: assets
+    values:
+      asset: true
+  - scope:
+      path: assets/images
+    values:
+      image: true
+  - scope:
+      path: ''
+      type: air
+    values:
+      layout: air
+  - scope:
+      path: ''
+      type: ground
+    values:
+      layout: ground
+collections:
+  air:
+    output: true
+    permalink: /:collection/:slug
+  ground:
+    output: true
+    permalink: /:collection/:slug
+adsense_client: ca-pub-9732535637352249
+adsense_slot: 6033478353
+ms_tilecolor: '#ffffff'
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+author: Sem Postma
+google_analytics: UA-90014538-4
+sw_exclude: 
+    - feed.xml
+    - sw.js
+    - sitemap.xml
+
+nations: 
+  - USA
+  - Germany
+  - USSR
+  - Britain
+  - Japan
+nation_flags: 
+  - flag-usa
+  - flag-germany
+  - flag-ussr
+  - flag-britain
+  - flag-japan
+

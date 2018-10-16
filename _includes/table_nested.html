@@ -1,0 +1,15 @@
+{% assign model = include.model %}
+{% for inner in model %}
+{% if inner[1].first[0] %}
+<tr>
+    <td class="sub-header info" colspan="2">{{ inner[0] | capitalize }}</td>
+</tr>
+{% assign inner_val = inner[1] %}
+{% include table_nested.html model = inner_val %}
+{% else %}
+<tr>
+    <td>{{ inner[0] | capitalize }}</td>
+    <td>{{ inner[1] | capitalize }}</td>
+</tr>
+{% endif %}
+{% endfor %}

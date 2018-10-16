@@ -1,0 +1,26 @@
+<div class="top"><b class="text-capitalize">Filter</b></div>
+<div class="sub-panel">
+    <label for="name" class="muted text-capitalize"><b>Name</b></label>
+    <input type="text" class="search" id="name">
+    <label for="class" class="muted text-capitalize"><b>Class</b></label>
+    <select class="class" id="class">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+    </select>
+    <div><b class="muted text-capitalize">Vehicle type</b></div>
+    <div id="vehicle-type">
+        <a data-vehicle-type="ground" href="#ground"><img width="20" height="20" src="{{ '/assets/images/tank.png' | absolute_url }}"
+                alt="tank"></a>
+        <a data-vehicle-type="air" href="#air"><img width="20" height="20" src="{{ '/assets/images/plane.png' | absolute_url }}"
+                alt="plane"></a>
+        <div class="clearfix"></div>
+    </div>
+    <div id="ground-vehicles-list" class="vehicle-list">
+        {% for tank_page in site.ground %}{% assign tank = site.data.ground.groundIndex[tank_page.index] %}{% assign model = site.data.ground.groundDB[tank_page.db] %}<a{% if page == tank_page %} class="active"{% endif %} href="{{ tank_page.url }}">{% assign nation_flag = site.nation_flags[tank.shop_nation] %}{% assign flag_url = '/assets/images/' | append: nation_flag | append: '.png' %}<img src="{{ flag_url }}" alt="{{ site.nations[tank.shop_nation] }}"><div><small>{{ model.unitClass | capitalize }}</small><b>{{ tank_page.title }}</b><span>Rank: {{ tank.rank }} - {% assign battlerating = tank.match | divided_by: 0.3 | plus: 0.67 | round | divided_by: 10.0 %}BR: {% if battlerating < 1 %}1.0{% else %}{{ battlerating }}{% endif %} - <i></i> {{ model.value_silv }}</span></div></a>{% endfor %}
+    </div>
+    <div id="airplanes-list" class="vehicle-list">
+        {% for plane_page in site.air %}{% assign airplane = site.data.air.airIndex[plane_page.index] %}{% assign model = site.data.air.airDB[plane_page.db] %}<a{% if page == plane_page %} class="active"{% endif %} href="{{ plane_page.url }}">{% assign nation_flag = site.nation_flags[airplane.shop_nation] %}{% assign flag_url = '/assets/images/' | append: nation_flag | append: '.png' %}<img src="{{ flag_url }}" alt="{{ site.nations[airplane.shop_nation] }}"><div><small>{{ model.unitClass | capitalize }}</small><b>{{ plane_page.title }}</b><span>Rank: {{ airplane.rank }} - {% assign battlerating = airplane.match | divided_by: 0.3 | plus: 0.67 | round | divided_by: 10.0 %}BR: {% if battlerating < 1 %}1.0{% else %}{{ battlerating }}{% endif %} - <i></i> {{ model.value_silv }}</span></div></a>{% endfor %}
+    </div>
+</div>

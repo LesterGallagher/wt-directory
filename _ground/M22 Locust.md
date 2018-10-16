@@ -1,0 +1,5 @@
+---
+index: 82
+description: 'M22 Locust - Light, Rank: 2, BR: 2.3, Silver lions: 22000, Research points: 9200'
+db: 74
+---
